@@ -5,10 +5,11 @@ locals {
 resource "aws_instance" "this" {
   count = var.instance_count
 
-  ami              = var.ami
-  instance_type    = var.instance_type
-  user_data        = var.user_data
-  user_data_base64 = var.user_data_base64
+  ami               = var.ami
+  availability_zone = var.instance_availability_zone
+  instance_type     = var.instance_type
+  user_data         = var.user_data
+  user_data_base64  = var.user_data_base64
   subnet_id = length(var.network_interface) > 0 ? null : element(
     distinct(compact(concat([var.subnet_id], var.subnet_ids))),
     count.index,

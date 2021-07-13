@@ -204,3 +204,9 @@ variable "num_suffix_format" {
   type        = string
   default     = "-%d"
 }
+
+variable "instance_availability_zone" {
+  description = "(Optional) AZ to start the instance in. "
+  default     = null
+  type        = string
+}
