@@ -25,6 +25,12 @@ resource "aws_instance" "this" {
   ipv6_address_count          = var.ipv6_address_count
   ipv6_addresses              = var.ipv6_addresses
 
+  lifecycle = {
+    ignore_changes = [
+      ami,
+    ]
+  }
+
   ebs_optimized = var.ebs_optimized
 
   dynamic "root_block_device" {
