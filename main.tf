@@ -25,7 +25,7 @@ resource "aws_instance" "this" {
   ipv6_address_count          = var.ipv6_address_count
   ipv6_addresses              = var.ipv6_addresses
 
-  lifecycle = {
+  lifecycle {
     ignore_changes = [
       ami,
     ]
