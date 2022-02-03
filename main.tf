@@ -30,7 +30,7 @@ resource "aws_instance" "this" {
       ami,
       tags,
       volume_tags,
-      root_block_device[*].tags
+      root_block_device[0].tags
     ]
   }
 
