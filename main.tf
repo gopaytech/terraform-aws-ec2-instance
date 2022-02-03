@@ -29,7 +29,8 @@ resource "aws_instance" "this" {
     ignore_changes = [
       ami,
       tags,
-      volume_tags
+      volume_tags,
+      root_block_device[0].tags
     ]
   }
 
